@@ -22,9 +22,6 @@ The following **optional** user stories are implemented:
 - [ ] Customize the selection effect of the cell (+1pt)
 - [ ] For the large poster, load the low resolution image first and then switch to the high resolution image when complete (+2pt)
 
-The following **additional** user stories are implemented:
-
-- 
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
@@ -36,8 +33,6 @@ Please list two areas of the assignment you'd like to **discuss further with you
 Here's a walkthrough of implemented user stories:
 
 <img src='https://media.giphy.com/media/3o7529MJbl4zGhqXKM/giphy.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-
-GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
