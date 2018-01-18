@@ -94,6 +94,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let cell = sender as! MovieCell
+        let vc = segue.destination as! DetailsViewController
+        let index = MovieTableView.indexPath(for: cell)
+        vc.movie = movieLists[(index?.row)!]
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

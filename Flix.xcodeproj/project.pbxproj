@@ -11,6 +11,9 @@
 		8B914C6AC8E10DDCB58761BF /* Pods_FlixTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB7C4C05098429D7946A1BF6 /* Pods_FlixTests.framework */; };
 		CD0E0F110AAB5B9E30D9DBE3 /* Pods_Flix.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA62BE3BDE9E228BB5E2F45C /* Pods_Flix.framework */; };
 		D540759D2006DE1500D5B82C /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D540759C2006DE1500D5B82C /* MovieCell.swift */; };
+		D5A23FE6200FDCB900DD1997 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A23FE5200FDCB900DD1997 /* DetailsViewController.swift */; };
+		D5E8168B201017C2002A1FCD /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E8168A201017C2002A1FCD /* CollectionViewController.swift */; };
+		D5E8168D201017EE002A1FCD /* PosterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E8168C201017EE002A1FCD /* PosterCell.swift */; };
 		D5F84B5F2006DC5000A952A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F84B5E2006DC5000A952A3 /* AppDelegate.swift */; };
 		D5F84B612006DC5000A952A3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F84B602006DC5000A952A3 /* ViewController.swift */; };
 		D5F84B642006DC5000A952A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5F84B622006DC5000A952A3 /* Main.storyboard */; };
@@ -46,6 +49,9 @@
 		BA62BE3BDE9E228BB5E2F45C /* Pods_Flix.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flix.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB7C4C05098429D7946A1BF6 /* Pods_FlixTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlixTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D540759C2006DE1500D5B82C /* MovieCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
+		D5A23FE5200FDCB900DD1997 /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		D5E8168A201017C2002A1FCD /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		D5E8168C201017EE002A1FCD /* PosterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PosterCell.swift; sourceTree = "<group>"; };
 		D5F84B5B2006DC5000A952A3 /* Flix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5F84B5E2006DC5000A952A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D5F84B602006DC5000A952A3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -140,8 +146,11 @@
 			isa = PBXGroup;
 			children = (
 				D5F84B5E2006DC5000A952A3 /* AppDelegate.swift */,
+				D5A23FE5200FDCB900DD1997 /* DetailsViewController.swift */,
 				D5F84B602006DC5000A952A3 /* ViewController.swift */,
 				D5F84B622006DC5000A952A3 /* Main.storyboard */,
+				D5E8168C201017EE002A1FCD /* PosterCell.swift */,
+				D5E8168A201017C2002A1FCD /* CollectionViewController.swift */,
 				D540759C2006DE1500D5B82C /* MovieCell.swift */,
 				D5F84B652006DC5000A952A3 /* Assets.xcassets */,
 				D5F84B672006DC5000A952A3 /* LaunchScreen.storyboard */,
@@ -469,7 +478,10 @@
 			files = (
 				D5F84B612006DC5000A952A3 /* ViewController.swift in Sources */,
 				D5F84B5F2006DC5000A952A3 /* AppDelegate.swift in Sources */,
+				D5E8168D201017EE002A1FCD /* PosterCell.swift in Sources */,
 				D540759D2006DE1500D5B82C /* MovieCell.swift in Sources */,
+				D5A23FE6200FDCB900DD1997 /* DetailsViewController.swift in Sources */,
+				D5E8168B201017C2002A1FCD /* CollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

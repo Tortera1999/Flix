@@ -10,10 +10,35 @@ import UIKit
 
 class DetailsViewController: UIViewController {
 
+    @IBOutlet weak var backgroundImageView: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var coverImageView: UIImageView!
+    @IBOutlet weak var overviewLabel: UILabel!
+    @IBOutlet weak var releaseLabel: UILabel!
+    
+    var movie: [String : Any]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let movie = movie {
+            titleLabel.text = movie["title"] as? String;
+            overviewLabel.text = movie["overview"] as? String
+            releaseLabel.text = movie["release_date"] as? String
+            let backgroundUrl = movie["backdrop_path"] as? String
+            let posterUrl = movie["poster_path"] as? String
+            let baseUrl = "https://image.tmdb.org/t/p/w500";
+            
+            let UsePosterUrl = URL(string: (baseUrl + posterUrl!))
+            let UseBackgroundUrl = URL(string: (baseUrl + backgroundUrl!))
+            
 
-        // Do any additional setup after loading the view.
+            backgroundImageView.af_setImage(withURL: UseBackgroundUrl!)
+            
+            coverImageView.af_setImage(withURL: UsePosterUrl!)
+            
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
