@@ -1,0 +1,13 @@
+//
+//  PosterCell.swift
+//  Flix
+//
+//  Created by Nikhil Iyer on 1/17/18.
+//  Copyright © 2018 Nikhil Iyer. All rights reserved.
+//
+
+import UIKit
+
+class PosterCell: UICollectionViewCell {
+    
+}
