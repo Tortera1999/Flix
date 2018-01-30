@@ -1,40 +1,44 @@
-# Project 2 - *FLix*
+# Lab 3 - *Flix*
 
 **Flix** is a movies app displaying box office and top rental DVDs using [The Movie Database API](http://docs.themoviedb.apiary.io/#).
 
-Time spent: **3** hours spent in total
+Time spent: **2** hours spent in total
 
 ## User Stories
 
-The following **required** functionality is completed:
+The following **required** user stories are complete:
 
-- [X] User can tap a cell to see a detail view (+5pts)
-- [X] User can tap a tab bar button to view a grid layout of Movie Posters using a CollectionView (+5pts)
+- The following screens use AutoLayout to adapt to various orientations and screen sizes
+- [X] Movie feed view (+3pt)
+- [X] Detail view (+2pt)
 
-The following **optional** features are implemented:
+The following **optional** user stories are implemented:
 
-- [X] User can tap a poster in the collection view to see a detail screen of that movie (+3pts)
-- [ ] In the detail view, when the user taps the poster, a new screen is presented modally where they can view the trailer (+3pts)
-- [ ] Customize the navigation bar (+1pt)
-- [ ] List in any optionals you didn't finish from last week (+1-3pts)
+- [ ] Dynamic Height Cells (+1)
+- [ ] Collection View AutoLayout (+2)
 
+The following **additional** user stories are implemented:
+
+- None
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
-1. Need to sort the table view content by ratings
-2. Need to add a search bar
+1. Add auto layout to collection view
+2. Add dynamic row heights
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://gph.is/2FRXgPo' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://media.giphy.com/media/26DN1ti6hVJ1wqRm8/giphy.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
 Describe any challenges encountered while building the app.
 
-Had trouble implementing the collection view
+- Had problems implementing the auto layout constraints
 
 ## License
 
