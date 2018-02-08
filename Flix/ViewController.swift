@@ -13,14 +13,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     @IBOutlet weak var MovieTableView: UITableView!
     let refreshController = UIRefreshControl();
-    var movieLists: [[String: Any]] = [];
     @IBOutlet weak var refreshPic: UIActivityIndicatorView!
+    
+    var movies: [Movie] = []
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //refreshPic.activityIndicatorViewStyle  = UIActivityIndicatorViewStyle.gray;
         refreshPic.startAnimating()
         
         refreshController.addTarget(self, action: #selector(ViewController.refreshControlAction(_:)), for: .valueChanged)
@@ -30,66 +30,35 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         MovieTableView.delegate = self
         MovieTableView.dataSource = self
         
-        loadPosts()
-        
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 20) {
-//            self.refreshPic.stopAnimating()
-//            self.refreshPic.isHidden = true
-//        }
-        
-        
-        
-    }
-    
-    func loadPosts() {
-        
-        refreshPic.startAnimating()
-        refreshPic.hidesWhenStopped = true
-        
-        let url = URL(string: "https://api.themoviedb.org/3/movie/now_playing?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed")!
-        let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
-        let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
-        let task = session.dataTask(with: request) { (data, response, error) in
-            //This will run when network request returns
-            if let error = error{
-                print(error.localizedDescription)
-            } else if let data = data,
-                let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
-                let movies = dataDictionary["results"] as! [[String: Any]]
-                self.movieLists = movies;
+        MovieApiManager().nowPlayingMovies { (movies: [Movie]?, error: Error?) in
+            if let movies = movies {
+                self.movies = movies
                 self.MovieTableView.reloadData()
-                            }
+            }
         }
-        
-        task.resume()
-        
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return movieLists.count;
+        return movies.count;
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "movieCell") as! MovieCell
-            let moviePost = movieLists[indexPath.row]
-            let movieTitle = moviePost["title"] as! String
-            let movieDescription  = moviePost["overview"] as! String
-            let baseUrl = "https://image.tmdb.org/t/p/w500";
-            let movieUrl = moviePost["poster_path"] as! String;
-            let url = URL(string: (baseUrl + movieUrl))
-        
-            cell.titleLabel.text = movieTitle
-            cell.overviewLabel.text = movieDescription
-            cell.photoImageView.af_setImage(withURL: url!)
-            self.refreshPic.stopAnimating()
+        cell.movie = movies[indexPath.row];
+        self.refreshPic.stopAnimating()
         
         return cell
     }
     
     
     func refreshControlAction(_ refreshControl: UIRefreshControl) {
-        loadPosts()
+        MovieApiManager().nowPlayingMovies { (movies: [Movie]?, error: Error?) in
+            if let movies = movies {
+                self.movies = movies
+                self.MovieTableView.reloadData()
+            }
+        }
         self.refreshController.endRefreshing()
         
     }
@@ -98,7 +67,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let cell = sender as! MovieCell
         let vc = segue.destination as! DetailsViewController
         let index = MovieTableView.indexPath(for: cell)
-        vc.movie = movieLists[(index?.row)!]
+        vc.movie = movies[(index?.row)!]
     }
     
     override func didReceiveMemoryWarning() {

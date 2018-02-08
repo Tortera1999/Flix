@@ -16,28 +16,17 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var overviewLabel: UILabel!
     @IBOutlet weak var releaseLabel: UILabel!
     
-    var movie: [String : Any]?
+    var movie: Movie!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let movie = movie {
-            titleLabel.text = movie["title"] as? String;
-            overviewLabel.text = movie["overview"] as? String
-            releaseLabel.text = movie["release_date"] as? String
-            let backgroundUrl = movie["backdrop_path"] as? String
-            let posterUrl = movie["poster_path"] as? String
-            let baseUrl = "https://image.tmdb.org/t/p/w500";
-            
-            let UsePosterUrl = URL(string: (baseUrl + posterUrl!))
-            let UseBackgroundUrl = URL(string: (baseUrl + backgroundUrl!))
-            
-
-            backgroundImageView.af_setImage(withURL: UseBackgroundUrl!)
-            
-            coverImageView.af_setImage(withURL: UsePosterUrl!)
-            
-        }
+        titleLabel.text = movie.title
+        overviewLabel.text = movie.descript
+        coverImageView.af_setImage(withURL: movie.posterUrl!)
+        backgroundImageView.af_setImage(withURL: movie.backdropUrl!)
+        releaseLabel.text = movie.releaseDate
         
     }
 
